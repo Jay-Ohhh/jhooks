@@ -1,5 +1,7 @@
 # Jhooks
 
+A React Hooks library
+
 ## Getting Started
 
 Install dependencies,
