@@ -11,13 +11,17 @@ export const menus = [
       'useLocalStorageState',
       'useSessionStorageState',
       'useCookieState',
+      'useSet',
+      'useMap',
+      'usePrevious',
+      'useRafState',
       'useSafeState',
       'useGetState',
     ],
   },
   {
     title: 'Effect',
-    children: ['useUpdateEffect', 'useUpdateLayoutEffect'],
+    children: ['useUpdateEffect', 'useUpdateLayoutEffect', 'useAsyncEffect'],
   },
   {
     title: 'Advanced',

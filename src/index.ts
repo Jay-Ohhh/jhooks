@@ -11,3 +11,8 @@ export { default as useLocalStorageState } from './useLocalStorageState';
 export { default as useCookieState } from './useCookieState';
 export { default as useSafeState } from './useSafeState';
 export { default as useGetState } from './useGetState';
+export { default as usePrevious } from './usePrevious';
+export { default as useRafState } from './useRafState';
+export { default as useAsyncEffect } from './useAsyncEffect';
+export { default as useSet } from './useSet';
+export { default as useMap } from './useMap';
