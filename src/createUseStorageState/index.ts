@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useMemoizedFn from '../useMemoizedFn';
 import useUpdateEffect from '../useUpdateEffect';
-import { isFunction } from '@/utils';
+import { isFunction } from '../utils';
 
 export interface IFuncUpdater<T> {
   (previousState?: T): T;

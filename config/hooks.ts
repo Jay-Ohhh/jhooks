@@ -11,6 +11,8 @@ export const menus = [
       'useLocalStorageState',
       'useSessionStorageState',
       'useCookieState',
+      'useDebounce',
+      'useThrottle',
       'useSet',
       'useMap',
       'usePrevious',
@@ -21,7 +23,19 @@ export const menus = [
   },
   {
     title: 'Effect',
-    children: ['useUpdateEffect', 'useUpdateLayoutEffect', 'useAsyncEffect'],
+    children: [
+      'useUpdateEffect',
+      'useUpdateLayoutEffect',
+      'useAsyncEffect',
+      'useDebounceFn',
+      'useDebounceEffect',
+      'useThrottleFn',
+      'useThrottleEffect',
+    ],
+  },
+  {
+    title: 'Dom',
+    children: ['useEventListener', 'useExternal'],
   },
   {
     title: 'Advanced',

@@ -7,11 +7,10 @@
     "esModuleInterop": true,
     "types": ["jest", "node"],
     "skipLibCheck": true,
-    "declaration": false,
+    "declaration": true,
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "jhooks": ["src/index.ts"]
     },
     "allowSyntheticDefaultImports": true,
@@ -26,8 +25,9 @@
     "es",
     "dist",
     "example",
-    "**/__tests__",
     "**/__test__",
+    "test",
+    "tests",
     "**/.umi*"
   ]
 }

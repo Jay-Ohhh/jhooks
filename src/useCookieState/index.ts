@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import { useState } from 'react';
 import useMemoizedFn from '../useMemoizedFn';
-import { isFunction } from '@/utils';
+import { isFunction } from '../utils';
 
 export type State = string | undefined;
 

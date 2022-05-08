@@ -10,9 +10,7 @@ const config: IConfig = {
   outputPath: 'docs-dist',
   mode: 'site',
   // more config: https://d.umijs.org/config
-  alias: {
-    '@/*': 'src/*',
-  },
+  alias: {},
   fastRefresh: {}, // 开发环境下，可以保持组件状态，同时编辑提供即时反馈
   hash: true,
 
