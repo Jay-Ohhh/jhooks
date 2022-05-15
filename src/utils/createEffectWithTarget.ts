@@ -7,6 +7,7 @@ import { getTargetElement } from './domTarget';
 
 const createEffectWithTarget = (useEffectType: typeof useEffect | typeof useLayoutEffect) => {
   /**
+   * deps或target改变就重新执行effect
    * @param effect
    * @param deps
    * @param target target should compare ref.current vs ref.current, dom vs dom, ()=>dom vs ()=>dom
@@ -36,7 +37,7 @@ const createEffectWithTarget = (useEffectType: typeof useEffect | typeof useLayo
         unLoadRef.current = effect();
         return;
       }
-
+      // 为什么不把els、deps放在依赖项数组里？因为依赖项数组是浅比较
       if (!depsAreSame(els, lastElementsRef.current) || !depsAreSame(deps, lastDepsRef.current)) {
         unLoadRef.current?.();
 
