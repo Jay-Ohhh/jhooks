@@ -1,4 +1,8 @@
-export const menus = [
+export const menus: { title: string; children: string[] }[] = [
+  {
+    title: 'Scene',
+    children: ['useNetwork', 'useCounter'],
+  },
   {
     title: 'LifeCycle',
     children: ['useMount', 'useUnmount', 'useUnmountedRef'],
@@ -35,6 +39,8 @@ export const menus = [
       'useRafTimeout',
       'useInterval',
       'useRafInterval',
+      'useDeepCompareEffect',
+      'useDeepCompareLayoutEffect',
       'useLockFn',
       'useUpdate',
     ],
@@ -48,12 +54,30 @@ export const menus = [
       'useTitle',
       'useFavicon',
       'useSize',
+      'useHover',
       'useMouse',
+      'useScroll',
+      'useFullscreen',
+      'useInViewport',
       'useFocusWithin',
+      'useKeyPress',
+      'useLongPress',
     ],
   },
   {
     title: 'Advanced',
-    children: ['useLatest', 'useMemoizedFn', 'useEventEmitter', 'useCreation', 'useReactive'],
+    children: [
+      'useLatest',
+      'useMemoizedFn',
+      'useEventEmitter',
+      'useCreation',
+      'useReactive',
+      'useIsomorphicLayoutEffect',
+      'useControllableValue',
+    ],
+  },
+  {
+    title: 'Dev',
+    children: ['useTrackedEffect', 'useWhyDidYouUpdate'],
   },
 ];

@@ -17,6 +17,7 @@ export class EventEmitter<T> {
     }
   };
 
+  // on
   useSubscription = (key: React.Key, callback: Subscription<T>) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const callbackRef = useRef<Subscription<T>>();
@@ -30,7 +31,7 @@ export class EventEmitter<T> {
       return () => {
         this.off(key);
       };
-    });
+    }, []);
   };
 }
 

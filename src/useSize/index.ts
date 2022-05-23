@@ -1,5 +1,3 @@
-import { stat } from 'fs';
-import { entries } from 'lodash';
 import ResizeObserver from 'resize-observer-polyfill';
 import useRafState from '../useRafState';
 import type { BasicTarget } from '../utils/domTarget';

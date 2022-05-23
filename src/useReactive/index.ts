@@ -46,6 +46,7 @@ function observer<T extends Record<string, any>>(initialVal: T, cb: () => void):
     set(target, key, val, receiver) {
       // Reflect.set() 工作方式就像在一个对象上设置一个属性。
       const ret = Reflect.set(target, key, val);
+      // 即使是在这里触发setState更新的，只要在 React 管理的事件回调和生命周期中，setState仍是异步且批量更新的
       cb();
       return ret;
     },

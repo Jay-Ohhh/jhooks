@@ -13,6 +13,7 @@ export function useFocusWithin(target: BasicTarget, options?: Options) {
   const { onFocus, onBlur, onChange } = options || {};
 
   useEventListener(
+    // focus不会冒泡，focusin冒泡
     'focusin',
     (e: FocusEvent) => {
       // 当前focus元素再被focus,不再触发
