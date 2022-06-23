@@ -60,13 +60,13 @@ const config: IConfig = {
     defaultSizes: 'parsed', // stat  // gzip
   },
   devServer: {
-    port: 8081,
+    port: 8082,
   },
   chainWebpack(memo, { env, webpack, createCSSRule }) {
     if (env === 'development') {
       memo.plugin('openBrowser').use(OpenBrowserPlugin, [
         {
-          url: 'http://localhost:8081',
+          url: 'http://localhost:8082',
         },
       ]);
     }

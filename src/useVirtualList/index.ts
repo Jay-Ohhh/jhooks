@@ -10,7 +10,7 @@ export interface Options<T> {
   containerTarget: BasicTarget; // 外面容器
   wrapperTarget: BasicTarget; // 内部容器
   itemHeight: number | ((index: number, data: T) => number); // 行高度，静态高度可以直接写入像素值，动态高度可传入函数	n
-  overscan?: number; // 	视区上、下额外展示的 DOM 节点数量
+  overscan?: number; // 视区上、下额外展示的 DOM 节点数量
 }
 
 function useVirtualList<T = any>(list: T[], options: Options<T>) {
@@ -22,11 +22,10 @@ function useVirtualList<T = any>(list: T[], options: Options<T>) {
 
   const [targetList, setTargetList] = useState<{ index: number; data: T }[]>([]);
 
-  // 获取距离父容器顶部（没有被遮挡一部分的）第一个元素的在list中的index
+  // 获取距离父容器顶部（包括被遮挡一部分的）第一个元素的在list中的index
   const getOffset = (scrollTop: number) => {
     if (typeof itemHeightRef.current === 'number') {
-      // +1：没有被遮
-      return Math.floor(scrollTop / itemHeightRef.current) + 1;
+      return Math.floor(scrollTop / itemHeightRef.current);
     }
     let sum = 0;
     let offset = 0;
@@ -38,9 +37,9 @@ function useVirtualList<T = any>(list: T[], options: Options<T>) {
         break;
       }
     }
-    return offset + 1;
+    return offset;
   };
-  // 获取显示的数量，不包括顶部和底部被遮挡一部分的元素
+  // 获取显示的数量，包括顶部被遮挡一部分的元素，包括底部被遮挡一部分的元素
   const getVisibleCount = (containerHeight: number, startIndex: number) => {
     if (typeof itemHeightRef.current === 'number') {
       return Math.ceil(containerHeight / itemHeightRef.current);
@@ -58,7 +57,7 @@ function useVirtualList<T = any>(list: T[], options: Options<T>) {
     return endIndex - startIndex;
   };
 
-  // 获取上部高度(若容器内顶部第一个元素被遮挡一部分，则包括这个元素的高度)
+  // 获取上部高度(若容器内顶部第一个元素被遮挡一部分，则不包括这个元素的高度)
   const getDistanceTop = (index: number) => {
     if (typeof itemHeightRef.current === 'number') {
       const height = index * itemHeightRef.current;

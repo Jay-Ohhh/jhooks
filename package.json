@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "jhooks",
   "version": "1.0.0",
   "scripts": {
@@ -13,7 +12,13 @@
     "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build"
   },
-  "module": "es/index.js",
+  "keywords": [
+    "jhooks",
+    "react",
+    "hooks"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "typings": "es/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -28,9 +33,8 @@
   },
   "files": [
     "dist",
-    "lib",
-    "es",
     "package.json",
+    "LICENSE",
     "README.md"
   ],
   "dependencies": {
