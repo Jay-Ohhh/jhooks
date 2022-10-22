@@ -1,7 +1,7 @@
 export const menus: { title: string; children: string[] }[] = [
   {
     title: 'Scene',
-    children: ['useNetwork', 'useCounter', 'useWebSocket', 'useVirtualList'],
+    children: ['useNetwork', 'useCounter', 'useWebSocket', 'useVirtualList', 'useDynamicList'],
   },
   {
     title: 'LifeCycle',

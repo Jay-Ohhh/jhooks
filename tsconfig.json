@@ -9,9 +9,9 @@
     "skipLibCheck": true,
     "declaration": true,
     "downlevelIteration": true,
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "paths": {
-      "jhooks": ["src/index.ts"]
+      "jhooks": ["./src/index.ts"]
     },
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
